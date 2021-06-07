@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cryptomonaie.name %>
+</p>
+
+<p>
+  <strong>Crypto dispo:</strong>
+  <%= @cryptomonaie.crypto_dispo %>
+</p>
+
+<p>
+  <strong>Cours crypto:</strong>
+  <%= @cryptomonaie.cours_crypto %>
+</p>
+
+<%= link_to 'Edit', edit_cryptomonaie_path(@cryptomonaie) %> |
+<%= link_to 'Back', cryptomonaies_path %>

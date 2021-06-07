@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Cryptomonaies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Crypto dispo</th>
+      <th>Cours crypto</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cryptomonaies.each do |cryptomonaie| %>
+      <tr>
+        <td><%= cryptomonaie.name %></td>
+        <td><%= cryptomonaie.crypto_dispo %></td>
+        <td><%= cryptomonaie.cours_crypto %></td>
+        <td><%= link_to 'Show', cryptomonaie %></td>
+        <td><%= link_to 'Edit', edit_cryptomonaie_path(cryptomonaie) %></td>
+        <td><%= link_to 'Destroy', cryptomonaie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<div class="btn-crypto">
+<%= link_to 'New Cryptomonaie', new_cryptomonaie_path %>
+</div>
