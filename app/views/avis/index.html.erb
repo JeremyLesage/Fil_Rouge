@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Avis</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>First name</th>
+      <th>Phone number</th>
+      <th>Email</th>
+      <th>Sujet</th>
+      <th>Message</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @avis.each do |avi| %>
+      <tr>
+        <td><%= avi.name %></td>
+        <td><%= avi.first_name %></td>
+        <td><%= avi.phone_number %></td>
+        <td><%= avi.email %></td>
+        <td><%= avi.sujet %></td>
+        <td><%= avi.message %></td>
+        <td><%= link_to 'Show', avi %></td>
+        <td><%= link_to 'Edit', edit_avi_path(avi) %></td>
+        <td><%= link_to 'Destroy', avi, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Avi', new_avi_path %>
